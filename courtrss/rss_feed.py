@@ -112,7 +112,7 @@ def parse_yaml_config(config_path):
         config = yaml.safe_load(file)
         return config['rss_urls'], config['keywords'], config['notifications'], config.get('interval', 60), config.get('retries', 3), config.get('retry_interval', 60)
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description="Monitor RSS feeds for specific keywords.")
     parser.add_argument('--rss_urls', help="Comma-separated list of RSS feed URLs.")
     parser.add_argument('--keywords', help="Comma-separated list of keywords.")

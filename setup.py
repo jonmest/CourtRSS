@@ -1,15 +1,15 @@
 from setuptools import setup, find_packages
 
+requirements = []
+with open('requirements.txt', 'r') as f:
+    for line in f.readlines():
+        requirements.append(line.strip())
+
 setup(
     name='courtrss',
-    version='0.1.0',
+    version='0.1.4',
     packages=find_packages(),
-    install_requires=[
-        'feedparser',
-        'PyYAML',
-        'requests',
-        'tkinter',
-    ],
+    install_requires=requirements,
     entry_points={
         'console_scripts': [
             'courtrss = courtrss.rss_feed:main',
@@ -19,7 +19,7 @@ setup(
     description='A package to monitor court RSS feeds for keywords.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/jonmest/courtrss',
+    url='https://github.com/jonmest/CourtRSS',
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
